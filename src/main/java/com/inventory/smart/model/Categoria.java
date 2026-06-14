@@ -15,14 +15,19 @@ public class Categoria {
      * Crea una nueva categoría.
      *
      * @param id el identificador único de la categoría (puede ser nulo antes de guardarse)
-     * @param nombre el nombre de la categoría
+     * @param nombre el nombre de la categoría (no puede ser nulo ni vacío)
      * @param descripcion la descripción de la categoría
+     * @throws IllegalArgumentException si el nombre es nulo o vacío
      */
     public Categoria(Long id, String nombre, String descripcion) {
+        if (nombre == null || nombre.isBlank()) {
+            throw new IllegalArgumentException("El nombre de la categoría no puede estar vacío.");
+        }
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
     }
+
 
     /**
      * Obtiene el identificador de la categoría.
@@ -76,5 +81,14 @@ public class Categoria {
      */
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+    
+        /**
+     * Devuelve el nombre de la categoría en mayúsculas.
+     *
+     * @return el nombre en mayúsculas
+     */
+    public String getNombreMayuscula() {
+        return nombre != null ? nombre.toUpperCase() : null;
     }
 }
