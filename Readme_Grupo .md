@@ -19,6 +19,15 @@ Una vez que termina de compilar, se puede levantar la aplicación ejecutando el 
 
 Con el servidor corriendo, se puede ingresar desde el navegador a la dirección http://localhost:8081/swagger-ui.html para ver y probar todos los endpoints que armamos, los cuales quedaron documentados con Swagger.
 
+Nota adicional de ejecución
+Ademas de Intellij, el proyecto puede ejecutarse sin problemas desde visual Studio Code utilizando la terminal integrada.
+Los mismos comandos (mvn clean package y mvn spring-boot:run) funcionan allí, lo que facilita a quienes prefieren VS Code como entorno de desarrollo.  
+También se recomienda probar los endpoints con Postman, además de Swagger UI, para validar las respuestas en distintos escenarios.
+
+Observación técnica adicional 
+Durante las pruebas de rendimiento notamos que el uso de Streams en Java introduce un costo inicial mayor en datasets pequeños, pero escala correctamente en conjuntos grandes.  
+Esto explica parte de las diferencias observadas en los tiempos medidos.
+
 Desarrollo del proyecto y requerimientos
 Cumplimos con todos los puntos solicitados en la consigna. A continuación resumimos cómo resolvimos los temas principales:
 
