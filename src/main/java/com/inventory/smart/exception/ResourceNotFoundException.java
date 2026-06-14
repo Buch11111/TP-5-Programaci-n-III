@@ -8,6 +8,8 @@ package com.inventory.smart.exception;
  */
 public class ResourceNotFoundException extends RuntimeException {
     
+    private static final long serialVersionUID = 1L;
+
     /**
      * Crea una nueva excepción con el mensaje especificado.
      *
